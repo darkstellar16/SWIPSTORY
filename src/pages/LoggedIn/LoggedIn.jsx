@@ -5,7 +5,7 @@ import styles from "../LoggedIn/LoggedIn.module.css"
 import icon from "../../assets/icon.svg";
 import icon2 from "../../assets/icon2.png";
 // import StoryCard from "../../components/StoryCard/StoryCard.jsx";
-import Card from "../../components/StoryCard/StoryCard.jsx";
+// import Card from "../../components/StoryCard/StoryCard.jsx";
 import StoryCard from "../../components/StoryCard/StoryCard.jsx";
 function LoggedIn() {
   let arr = [
@@ -49,6 +49,36 @@ function LoggedIn() {
       url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHZAq08u4YaR0Jsu2CgeptdxC74y-9QEeFYEAb6YHP&s",
       category: "Food",
     },
+    {
+      heading: "Nutritious ",
+      description: "Food that makes our body healthy and diseavsjlkzdsnfklzsjlfsfjx.dnklsnse-free is regarded as healthy food",
+      url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHZAq08u4YaR0Jsu2CgeptdxC74y-9QEeFYEAb6YHP&s",
+      category: "Food",
+    },
+    {
+      heading: "Nutritious ",
+      description: "Food that makes our body healthy and diseavsjlkzdsnfklzsjlfsfjx.dnklsnse-free is regarded as healthy food",
+      url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHZAq08u4YaR0Jsu2CgeptdxC74y-9QEeFYEAb6YHP&s",
+      category: "Food",
+    },
+    {
+      heading: "Nutritious ",
+      description: "Food that makes our body healthy and diseavsjlkzdsnfklzsjlfsfjx.dnklsnse-free is regarded as healthy food",
+      url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHZAq08u4YaR0Jsu2CgeptdxC74y-9QEeFYEAb6YHP&s",
+      category: "Food",
+    },
+    {
+      heading: "Nutritious ",
+      description: "Food that makes our body healthy and diseavsjlkzdsnfklzsjlfsfjx.dnklsnse-free is regarded as healthy food",
+      url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHZAq08u4YaR0Jsu2CgeptdxC74y-9QEeFYEAb6YHP&s",
+      category: "Food",
+    },
+    {
+      heading: "Nutritious ",
+      description: "Food that makes our body healthy and diseavsjlkzdsnfklzsjlfsfjx.dnklsnse-free is regarded as healthy food",
+      url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHZAq08u4YaR0Jsu2CgeptdxC74y-9QEeFYEAb6YHP&s",
+      category: "Food",
+    },
 
 
   ]
@@ -64,11 +94,8 @@ function LoggedIn() {
         </div>
         <div className={styles.cardContent} >{dummyData.map((item) => {
           return <StoryCard data={item} />
-        })}
+        })}</div>
       </div>
-
-
-    </div>
     </>
   );
 }

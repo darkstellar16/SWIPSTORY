@@ -12,7 +12,7 @@ const SignUp = ({ setIsOpenS }) => {
   const navigate = useNavigate();
 
   const handleSubmit = () => {
-    console.log("fbasdhkj,");
+    // console.log("fbasdhkj,");
     navigate('/log');
   };
 
