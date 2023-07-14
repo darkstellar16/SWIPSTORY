@@ -21,7 +21,8 @@
     position: relative;
     justify-content: center;
     margin-top: 35px;
-    font-size: small;   
-    /* z-index:1;  */
+    font-size: small;
+    z-index: -1;   
+   
   }
 

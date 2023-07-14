@@ -1,36 +1,81 @@
-.dataCard {
-    height: 459px;
+.headCard{
+    width: 280px;
+    height: 470px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card {
     width: 257px;
-    border: solid;
-    border-color: black;
-    position: absolute;
-    left: 100px;
-    top:320px;
-    border-radius: 55px;
-}
-
-.pht {
     height: 459px;
-    width: 257px;
-    position: absolute;
-    z-index: -1;
+    position: relative;
+    margin-left: 25px;
+    overflow: hidden;
+    border-radius: 8px;
+    z-index: -2;
+    /* margin: 30px; */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.head {
-    position: absolute;
-    top: 200px;
-    left: 25px
+.cardPhoto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.desc {
+.cardOverlay {
     position: absolute;
-    top: 250px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    /* background-color: rgba(0, 0, 0, 0.6); */
+    padding-top: 40px;
+
+    /* backdrop-filter: blur(5px); */
+    /* box-shadow: 0px 4px 10px 10px #d8d1d140; */
+    background: linear-gradient(0, #303030 59.6%, rgba(89, 87, 87, 0) 102.31%);
+
+}
+
+.cardTitle {
+    /* align-items: center; */
+    /* width: fit-content; */
+    left: 63px;    
+    color: #fff;
+   
+    /* margin-top: 5px;
+    margin-left: 0px; */
+    font-size: 18px;
+    font-weight: bold;
+    /* text-align: center; */
+    /* word-wrap:break-word; */
+}
+
+.cardDescription {
+    word-wrap: break-word;
+    /* margin-right: 70px; */
+    color: #fff;
+    font-size: 14px;
+    margin-top: 46px;
+    text-align: center;
+    align-items: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    /* overflow: hidden; */
+
+}
+
+.card-app {
+    display: flex;
+    justify-content: center;
 }
 
 .edit {
-    position:absolute;
-    top:430px;
-    left:95px;
+   position: relative;
+   left: 42%;
+   bottom: 4%;
+   /* z-index: -1; */
     border:solid;
     border-radius: 12px;
     background-color: white;
@@ -38,8 +83,4 @@
     font-weight:700;
     font-size: 12px;
     box-shadow: 0px 4px 15px 0px #0000001A;
-}
-.Categ{
-    position:absolute;
-    left:550px;
 }

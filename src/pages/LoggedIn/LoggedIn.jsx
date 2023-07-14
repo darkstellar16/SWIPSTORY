@@ -4,6 +4,8 @@ import LogNav from "../../components/NavBar/LogNav.jsx"
 import styles from "../LoggedIn/LoggedIn.module.css"
 import icon from "../../assets/icon.svg";
 import icon2 from "../../assets/icon2.png";
+// import StoryCard from "../../components/StoryCard/StoryCard.jsx";
+import Card from "../../components/StoryCard/StoryCard.jsx";
 import StoryCard from "../../components/StoryCard/StoryCard.jsx";
 function LoggedIn() {
   let arr = [
@@ -37,10 +39,18 @@ function LoggedIn() {
   let dummyData = [
     {
       heading: "Nutritious Food",
-      description:"Food that makes our body healthy and disease-free is regarded as healthy food",
-      photo: icon2,
-      category: "Food"
-    }
+      description: "Food that makes our body healthy and disease-free is regarded as healthy food",
+      url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHZAq08u4YaR0Jsu2CgeptdxC74y-9QEeFYEAb6YHP&s",
+      category: "Food",
+    },
+    {
+      heading: "Nutritious ",
+      description: "Food that makes our body healthy and diseavsjlkzdsnfklzsjlfsfjx.dnklsnse-free is regarded as healthy food",
+      url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHZAq08u4YaR0Jsu2CgeptdxC74y-9QEeFYEAb6YHP&s",
+      category: "Food",
+    },
+
+
   ]
 
   return (
@@ -52,13 +62,14 @@ function LoggedIn() {
             return <FilterCard text={item.text} img={item.href} />;
           })}
         </div>
-        <div className={styles.storyCard}>
-          {dummyData.map((item)=>{
-            return <StoryCard   heading={item.heading} description={item.description} photo={item.photo} category={item.category}   />
-          })}
-        </div>
+        <div className={styles.cardContent} >{dummyData.map((item) => {
+          return <StoryCard data={item} />
+        })}
       </div>
-   </>
+
+
+    </div>
+    </>
   );
 }
 

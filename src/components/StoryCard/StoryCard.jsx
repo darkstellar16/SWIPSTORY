@@ -1,38 +1,32 @@
-import React from "react";
+import React from 'react';
+import { useState } from "react";
 import styles from "../StoryCard/StoryCard.module.css"
 import icon5 from "../../assets/icon5.png"
 import AddStory from "../AddStory/AddStory.jsx"
-import { useState } from "react";
 
 
+const StoryCard = ({ data }) => {
 
-
-const StoryCard = (props) => {
 
     const [open, setOpen] = useState(false);
 
+    console.log(data)
     const openForm = () => {
         setOpen(true);
     }
-
-    console.log(open);
-
+    // const url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHZAq08u4YaR0Jsu2CgeptdxC74y-9QEeFYEAb6YHP&s";
     return (
-        <>
-            <div className={styles.Categ}>{props.category}</div>
-            <div className={styles.dataCard}>
-                <h4 className={styles.head}>{props.heading}</h4>
-                <p className={styles.desc}>{props.description}</p>
-                <img src={props.photo} className={styles.pht}></img>
-                <button className={styles.edit}><img className={styles.epht} src={icon5} onClick={openForm}></img>Edit</button>
+        <div className={styles.headCard}>
+            <div className={styles.card}>
+                <img className={styles.cardPhoto} src={data.url} alt="Card Background" />
+                <div className={styles.cardOverlay}>
+                    <h3 className={styles.cardTitle}>{data.heading}</h3>
+                    <p className={styles.cardDescription}>{data.description}</p>               </div>
             </div>
-            {open && <AddStory  setOpen={setOpen} /> }
-        </>
-
-    )
-}
-
-
-
+            <button className={styles.edit} onClick={openForm}><img src={icon5} ></img>Edit</button>
+            {open && <AddStory setOpen={setOpen} />}
+        </div>
+    );
+};
 
 export default StoryCard;
