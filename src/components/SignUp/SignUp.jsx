@@ -1,6 +1,8 @@
-import { React, useState, useEffect } from "react";
+import { React, useState, useEffect, useContext } from "react";
 import styles from "../SignUp/SignUp.module.css";
 import { useNavigate } from 'react-router-dom';
+import { UserContext } from "../../App";
+import axios from "axios";
 
 const SignUp = ({ setIsOpenS }) => {
   const closeS = () => {
@@ -8,14 +10,43 @@ const SignUp = ({ setIsOpenS }) => {
   };
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const { setLogin } = useContext(UserContext);
 
   const navigate = useNavigate();
 
-  const handleSubmit = () => {
-    // console.log("fbasdhkj,");
-    navigate('/log');
-  };
+  const loginUser = async () => {
+    try {
+      // console.log(username, password);
+      const info = await axios.post("http://localhost:8000/login", {
+        email: username,
+        password: password,
+      })
+      // console.log(info.data.user._id);
+      // console.log(info.data.user.token);
+      localStorage.setItem("userId", JSON.stringify(info.data.user._id))
+      localStorage.setItem("Token", JSON.stringify(info.data.user.token));
+      return true;
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
+  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
+    const check = await loginUser();
+    // console.log(check)
+
+    if (check) {
+      setLogin(true);
+      navigate('/log');
+      // console.log(username, password);
+    }
+    else {
+      alert("Incorrect credential")
+      navigate('/')
+    }
+  };
 
   useEffect(() => {
     document.body.style.overflowX = "hidden";
@@ -25,7 +56,7 @@ const SignUp = ({ setIsOpenS }) => {
       document.body.style.overflowY = "scroll";
     };
   }, []);
-
+  // console.log(login);
   return (
     <>
       <div className={styles.mainModal}></div>
@@ -36,7 +67,7 @@ const SignUp = ({ setIsOpenS }) => {
             <h3 className={styles.u}>Username</h3>
             <h3 className={styles.p}>Password</h3>
             <input
-              type="text"
+              type="email"
               className={styles.user}
               placeholder="Enter username"
               value={username}

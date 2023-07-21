@@ -79,8 +79,6 @@ function LoggedIn() {
       url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHZAq08u4YaR0Jsu2CgeptdxC74y-9QEeFYEAb6YHP&s",
       category: "Food",
     },
-
-
   ]
 
   return (

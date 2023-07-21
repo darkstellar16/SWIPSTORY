@@ -1,10 +1,10 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import styles from "../StoryForm/StoryForm.module.css"
+import styles from "../StoryForm/EditForm.module.css"
 import axios from "axios"
 
-const StoryForm = ({ setIsOpenS }) => {
+const EditForm = ({ setOpen }) => {
 
     const [head, setHead] = useState('');
     const [desc, setDesc] = useState('');
@@ -69,14 +69,13 @@ const StoryForm = ({ setIsOpenS }) => {
         // console.log(check.data);
         if (check) {
             setPosts([]);
-            setIsOpenS(false);
+            setOpen(false);
             alert("story added");
 
         }
         else {
             alert("some problem");
         }
-        setIsOpenS(false);
     }
     return (
         <>
@@ -141,7 +140,7 @@ const StoryForm = ({ setIsOpenS }) => {
 }
 
 
-export default StoryForm;
+export default EditForm;
 
 
 

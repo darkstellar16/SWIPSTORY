@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 import styles from "./LogNav.module.css";
-import AddStory from "../AddStory/AddStory.jsx"
+import AddStory from "../Story/AddStory.jsx"
 import icon3 from "../../assets/icon3.png";
 import icon4 from "../../assets/icon4.png";
 

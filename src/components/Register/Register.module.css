@@ -11,6 +11,7 @@
   align-items: center;
   background-color: #1e1e1e;
   opacity: 0.8;
+  z-index:  1;
 }
 .modalForm {
   background-color: white;
@@ -21,6 +22,7 @@
   left: 50%;
   border-radius: 0.5rem;
   transform: translate(-50%, -50%);
+  z-index: 2;
 }
 .form {
   position: absolute;
@@ -32,6 +34,7 @@
   width: 420px;
   /* border: solid; */
   border-color: white;
+  /* z-index: 1; */
 }
 .sbm {
   height: 25px;

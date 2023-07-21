@@ -7,8 +7,6 @@ function NavBar() {
   const [openR, setIsOpenR] = useState(false);
   const [openS, setIsOpenS] = useState(false);
   // const[isLogged,setIsLogged]=useState(false);
-
-
   const openRes = () => {
     setIsOpenR(true);
   };

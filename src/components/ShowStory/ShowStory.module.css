@@ -1,0 +1,78 @@
+.arrow1 {
+    /* border: solid; */
+    border-color: black;
+    width: 125px;
+    height: 570px;
+    /* background-color: black; */
+}
+
+.left {
+    position: relative;
+    top: 45%;
+}
+
+.right {
+    position: relative;
+    top: 45%;
+    left:68%
+}
+
+.arrow2 {
+    /* border: solid; */
+    border-color: black;
+    width: 125px;
+    height: 570px;
+    position: relative;
+    left: 110px;
+    /* background-color: black; */
+}
+
+.mainCard {
+    /* border: solid;. */
+    border-color: black;
+    position: relative;
+    left: 50px;
+    height: 570px;
+    width: 300px;
+    background-color: rgba(57, 55, 55, 0.264);
+    box-shadow:  0px 4px 15px 0px white;
+    background: linear-gradient(0, #151414 59.6%, rgba(89, 87, 87, 0) 102.31%);
+}
+
+
+.stories{
+    height:20px;
+    width:290px;
+    display:flex;
+    flex-direction: row;
+    justify-content:space-evenly ;
+    border: solid;
+    border-color: black;
+}
+
+.btnDiv{
+    height: 20px;
+    width: 270px;
+    position: relative;
+    left: 13px;
+    top:75px;
+    /* border: solid; */
+    /* border-color: black; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.btns{
+    height:27px;
+    width: 230px;
+    position: relative;
+    left: 28px;
+    top:498px;
+    /* border: solid; */
+    /* border-color: black; */
+    background-color:#151414;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import styles from "../Register/Register.module.css";
+import axios from 'axios';
 
 const Register = ({ setIsOpenR }) => {
   const closeR = () => {
@@ -9,10 +10,6 @@ const Register = ({ setIsOpenR }) => {
   };
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
 
   useEffect(() => {
     document.body.style.overflowX = "hidden";
@@ -22,6 +19,37 @@ const Register = ({ setIsOpenR }) => {
       document.body.style.overflowY = "scroll";
     };
   }, []);
+
+  const registerUser = async () => {
+    try {
+      console.log(username, password);
+
+      const data = await axios.post('http://localhost:8000/register', {
+        email: username,
+        password: password
+      })
+      return true
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
+  }
+  const handleSubmit = async (e) => {
+
+    e.preventDefault();
+    const check = await registerUser();
+    if (check) {
+      registerUser();
+      setIsOpenR(false);
+    }
+    else {
+      alert("Invalid Credentials");
+    }
+
+
+    // setIsOpenR(false);
+  };
+
   return (
     <>
       <div className={styles.mainModal}></div>
@@ -32,7 +60,7 @@ const Register = ({ setIsOpenR }) => {
             <h3 className={styles.u}>Username</h3>
             <h3 className={styles.p}>Password</h3>
             <input
-              type="text"
+              type="email"
               className={styles.user}
               Placeholder="Enter username"
               value={username}
@@ -45,7 +73,7 @@ const Register = ({ setIsOpenR }) => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <button className={styles.sbm} onSubmit={handleSubmit}>
+            <button className={styles.sbm} onClick={handleSubmit}>
               Register
             </button>
           </div>

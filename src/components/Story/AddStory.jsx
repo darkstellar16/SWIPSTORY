@@ -1,24 +1,13 @@
 import { React, useState, useEffect } from "react";
-import styles from "../AddStory/AddStory.module.css";
+import styles from "./AddStory.module.css";
 import StoryForm from "../StoryForm/StoryForm";
 
 
-const AddStory = ({ setIsOpenS, setOpen }) => {
+const AddStory = ({ setIsOpenS }) => {
   const closeS = () => {
-    if (setIsOpenS) {
-      setIsOpenS(false);
-    }
-    else {
-      setOpen(false);
-    }
-
+    setIsOpenS(false);
   };
-  // const [username, setUsername] = useState("");
-  // const [password, setPassword] = useState("");
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  // };
   useEffect(() => {
     document.body.style.overflowX = "hidden";
     document.body.style.overflowY = "hidden";
@@ -32,7 +21,7 @@ const AddStory = ({ setIsOpenS, setOpen }) => {
     <>
       <div className={styles.mainModal}></div>
       <div className={styles.modalForm}>
-        <StoryForm />
+        <StoryForm setIsOpenS={setIsOpenS} />
         <button className={styles.btn} onClick={closeS}>
           X
         </button>
