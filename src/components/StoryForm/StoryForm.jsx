@@ -74,7 +74,7 @@ const StoryForm = ({ setIsOpenS }) => {
 
         }
         else {
-            alert("some problem");
+            alert("cannot create post");
         }
         setIsOpenS(false);
     }

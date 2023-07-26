@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 import FilterCard from "../../components/Filter/FilterCard.jsx";
 import NavBar from "../../components/NavBar/NavBar.jsx";
 import styles from "../HomePage/HomePage.module.css"
@@ -31,13 +31,17 @@ function HomePage() {
       href: icon2,
     },
   ];
+  const [data, setData] = useState();
+  const receiveData = (data) => {
+    setData(data);
+  }
 
   return (
     <div className={styles.mainContent}>
       <NavBar />
       <div className={styles.mainCard}>
         {arr.map((item, indx) => {
-          return <FilterCard key={indx} text={item.text} img={item.href} />;
+          return <FilterCard receiveData={receiveData} key={indx} text={item.text} img={item.href} />;
         })}
       </div>
     </div>

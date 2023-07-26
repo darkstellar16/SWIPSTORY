@@ -4,14 +4,8 @@ import ShowStory from "../ShowStory/ShowStory";
 
 
 
-const ShowModal = ({ setOpen }) => {
-    
-    // const [username, setUsername] = useState("");
-    // const [password, setPassword] = useState("");
+const ShowModal = ({ setOpen, fullData }) => {
 
-    // const handleSubmit = (e) => {
-    //   e.preventDefault();
-    // };
     useEffect(() => {
         document.body.style.overflowX = "hidden";
         document.body.style.overflowY = "hidden";
@@ -21,11 +15,13 @@ const ShowModal = ({ setOpen }) => {
         };
     }, []);
 
+    // console.log(fullData);
+
     return (
         <>
             <div className={styles.mainModal}></div>
             <div className={styles.modalForm}>
-                <ShowStory  setShow={setOpen}/>
+                <ShowStory setShow={setOpen} fullData={fullData} />
             </div>
         </>
     );

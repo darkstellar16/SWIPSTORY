@@ -17,13 +17,20 @@ function LogNav() {
     navigate('/bookmark')
   }
 
+  const handleLogout = () => {
+    localStorage.removeItem("Token");
+    localStorage.removeItem("userId");
+    navigate('/');
+  }
+
   return (
     <>
       <div className={styles.main}>
         <div className={styles.story}>SWIP TORY</div>
         <button className={styles.bookMark} onClick={handleNavigate}><img src={icon4} className={styles.bkm}></img></button>
-        <button className={styles.sign} onClick={addStory}>Add story</button>
+        <button className={styles.sign} onClick={addStory}>ADD STORY</button>
         <img src={icon3} className={styles.icon3}></img>
+        <button className={styles.logout} onClick={handleLogout}>LOGOUT</button>
       </div>
       {openS && <AddStory setIsOpenS={setIsOpenS} />}
     </>
