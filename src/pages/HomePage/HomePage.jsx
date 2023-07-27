@@ -4,6 +4,9 @@ import NavBar from "../../components/NavBar/NavBar.jsx";
 import styles from "../HomePage/HomePage.module.css"
 import icon from "../../assets/icon.svg";
 import icon2 from "../../assets/icon2.png";
+import StoryCard from "../../components/StoryCard/StoryCard.jsx";
+
+
 function HomePage() {
   let arr = [
     {
@@ -23,17 +26,21 @@ function HomePage() {
       href: icon2,
     },
     {
-      text: "Movie",
+      text: "Movies",
       href: icon,
     },
     {
-      text: "Fitness",
+      text: "Food",
       href: icon2,
     },
   ];
   const [data, setData] = useState();
-  const receiveData = (data) => {
+  const [text, setText] = useState();
+  const storyData = (data) => {
     setData(data);
+  }
+  const storyText = (text) => {
+    setText(text);
   }
 
   return (
@@ -41,9 +48,14 @@ function HomePage() {
       <NavBar />
       <div className={styles.mainCard}>
         {arr.map((item, indx) => {
-          return <FilterCard receiveData={receiveData} key={indx} text={item.text} img={item.href} />;
+          return <FilterCard storyData={storyData} storyText={storyText} key={indx} text={item.text} img={item.href} />;
         })}
       </div>
+      {text && <div className={styles.story}>{` ${text} Stories`}</div>}
+      <div className={styles.cardContent}>{data?.map((item) => {
+        return <StoryCard data={item?.posts[0]} fullData={item.posts} />
+      })} </div>
+
     </div>
   );
 }

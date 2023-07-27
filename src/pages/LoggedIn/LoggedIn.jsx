@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 function LoggedIn() {
 
   const [data, setData] = useState();
+  const [text, setText] = useState();
   const [myStory, setMyStory] = useState();
   const [id, setId] = useState();
   let arr = [
@@ -43,6 +44,9 @@ function LoggedIn() {
   const receiveData = (data) => {
     setData(data);
   }
+  const receiveText = (text) => {
+    setText(text);
+  }
   // console.log(data);
   const userId = JSON.parse(localStorage.getItem("userId"));
   // console.log(userId);
@@ -66,15 +70,16 @@ function LoggedIn() {
         <LogNav />
         <div className={styles.mainCard}>
           {arr.map((item) =>
-            <FilterCard receiveData={receiveData} text={item.text} img={item.href} />
+            <FilterCard receiveData={receiveData} receiveText={receiveText} text={item.text} img={item.href} />
           )}
         </div>
-        <div className={styles.yourStory}>Your Stories</div>
+        <div className={styles.yourStory}>YOUR STORIES</div>
         <div className={styles.mycardContent} >{myStory?.map((item) => {
-          return <StoryCard data={item?.posts[0]} id={id} />
+          return <StoryCard data={item?.posts[0]} id={id} fullData={item?.posts} />
         })}</div>
+        {text && <div className={styles.story}>{`${text} Stories`}</div>}
         <div className={styles.cardContent} >{data?.map((item) => {
-          return <StoryCard data={item?.posts[0] } fullData = {item?.posts} />
+          return <StoryCard data={item?.posts[0]} fullData={item?.posts} />
         })}</div>
       </div>
     </>
@@ -82,3 +87,5 @@ function LoggedIn() {
 }
 
 export default LoggedIn;
+
+// {`${text} Stories`}

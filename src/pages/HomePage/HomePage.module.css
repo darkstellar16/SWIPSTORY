@@ -14,5 +14,31 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  box-shadow:  0px 4px 15px 0px #0000001A;
+  /* box-shadow: 0px 4px 15px 0px #0000001A; */
+}
+
+.cardContent {
+  position: relative;
+  top: 22px;
+  left: 20px;
+  width: 10;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.story {
+  position: relative;
+  top: 10px;
+  left: 700px;
+  font-weight: 700;
+  font-size: large;
+}
+
+.yourStory {
+  position: relative;
+  left: 700px;
+  top: 0px;
+  font-weight: 700;
+  font-size: large;
 }

@@ -15,23 +15,36 @@
   flex-direction: column;
 }
 
-/* .storyCard{
-  min-height:530px;
-  width:100%;
-  border: solid;
-  border-color: black;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-   position: absolute; 
-}   */
+.story {
+  position: relative;
+  top: 10px;
+  left: 700px;
+  font-weight: 700;
+  font-size:large;
+}
+
+.yourStory {
+  position: relative;
+  left: 700px;
+  top: 0px;
+  font-weight:700;
+  font-size: large;
+}
+
 .cardContent {
+  position: relative;
+  top: 22px;
+  left:20px;
   width: 10;
   display: flex;
   flex-wrap: wrap;
 
 }
+
 .mycardContent {
+  position: relative;
+  margin-top: 12px;
+  margin-left: 20px;
   width: 10;
   display: flex;
   flex-wrap: wrap;

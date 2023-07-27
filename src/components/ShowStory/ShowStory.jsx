@@ -2,16 +2,22 @@ import React from "react";
 import styles from "../ShowStory/ShowStory.module.css"
 // import rightArrow from "../../assets/RightArrow.svg"
 // import leftArrow from "../../assets/LeftArrow.svg"
-// import cross from "../../assets/CrossButton.svg"
+import cross from "../../assets/CrossButton.svg"
 // import share from "../../assets/ShareButton.svg"
-// import Bkm from "../../assets/BookMark.svg"
+import Bkm from "../../assets/BookMark.svg"
 // import like from "../../assets/Vector.svg"
 import Stories from "react-insta-stories";
 const ShowStory = ({ setShow, fullData }) => {
     const closeS = () => {
+        alert("clicked");
         setShow(false);
-
     };
+
+    const handleClick = ()=>{
+
+        console.log("check")
+    }
+
     // console.log(fullData);
 
     // const data = [
@@ -37,18 +43,24 @@ const ShowStory = ({ setShow, fullData }) => {
 
     const stories = fullData?.map((item) => ({
         content: ({ action, isPaused }) => (
-            <div style={{ background: `url(${item.image}) no-repeat`, backgroundSize: 'cover' }}>
-                <h3>{item.heading}</h3>
-                <p>{item.description}</p>
-                {/* <h1>{item.category}</h1> */}
+            <div onClick={action('close')} style={{ background: `url(${item.image}) no-repeat`, backgroundSize: 'cover', height: "100%", width: "100%", backdropfilter: "blur(0px)" }}>
+                <div style={{ height: "20px", width: "100%",  borderColor: "black",zIndex: "9", display: "flex", flexDirection: "row", position: "absolute", top: "45px", alignContent: "space-between" }}>
+                    <img src={Bkm} ></img>
+                    {/* <button className="close-button" onClick={() => action('close')}>&times;</button> */}
+                    <img src={cross} style={{ position: "absolute", left: "335px",cursor:"pointer" }} ></img>
+                </div>
+                <div style={{ position: "relative", marginTop: "380px", width: "100%", left: "0", height: "45%", backgroundColor: "rgba(0, 0, 0, 0.6)", backdropfilter: "blur(5px)", background: "linear-gradient(0, #303030 59.6%, rgba(89, 87, 87, 0) 102.31%)" }}>
+                    <h3 style={{ position: "relative", marginTop: "0px", marginLeft: "10%", color: "white" }}>{item.heading}</h3>
+                    <p style={{ color: "white", position: "relative", marginTop: "20px", textAlign: "center" }}>{item.description}</p>
+                </div>
             </div>
         ),
     }))
     return (
         <>
             <div className={styles.mainCard}>
-                {/* <h1>React Insta Stories App</h1> */}
-                <Stories stories={stories} loop={true} />
+                <Stories
+                    stories={stories} loop={true} />
             </div>
         </>
     )
@@ -64,57 +76,16 @@ const ShowStory = ({ setShow, fullData }) => {
     // )
 };
 export default ShowStory;
-{/* <div className={styles.btnDiv}>
-                    <img src={cross} onClick={closeS} />
-                    <img src={share} />
-                </div>
-                <div className={styles.btns}>
-                    <img src={Bkm} />
-                    <img src={like} />
-                </div> */}
-
-{/* <div className={styles.arrow2}><img src={rightArrow} className={styles.right} alt="Arrow" /></div> */ }
-
-
-{/* <div className={styles.arrow1}> <img src={leftArrow} className={styles.left} alt="Arrow" /></div> */ }
 
 
 
-// <InstaStories
-// stories={fullData?.map(story => ({
-
-//     content: (
-//         <div className={styles.storyContent}>
-//             <img src={story?.image} alt={story?.heading}></img>
-
-//         </div>
-//     ), duration: 5000,
-//     header: { heading: story?.heading },
-
-// }))}
-// defaultInterval={3000}
-// loop
-// width="100%"
-// height="80vh"
-
-// />
 
 
-// stories={stories?.map((story) => ({
-//     content: (
-//         <div className={styles.storyContent}>
-//             <img src={story?.image} alt={story?.heading} />
-//         </div>
-//     ),
-//     duration: 5000,
-//     header: { heading: story?.heading },
-// }))}
-// defaultInterval={3000}
-// loop
-// width="100%"
-// height="80vh"
 
-{/* <ReactStories
-                stories={story}
-                loop={true}
-            /> */}
+// <h3 style={{ position: "relative", top: "150px" }} >{item.heading}</h3>
+// <p style={{ position: "relative", top: "350px",color:"black",fontWeight:"bolder",fontSize:"10px" }} >{item.description}</p>
+
+
+{/* <button style={{ height: "25px", width: "20px", position: "relative", top: "600px", left: "328px", zIndex: "1" }}>
+                    <img src={Bkm} onClick={closeS}></img>
+                </button> */}
