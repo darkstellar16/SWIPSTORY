@@ -4,7 +4,7 @@ import styles from "../ShowStory/ShowStory.module.css"
 // import leftArrow from "../../assets/LeftArrow.svg"
 import cross from "../../assets/CrossButton.svg"
 // import share from "../../assets/ShareButton.svg"
-import Bkm from "../../assets/BookMark.svg"
+
 // import like from "../../assets/Vector.svg"
 import Stories from "react-insta-stories";
 const ShowStory = ({ setShow, fullData }) => {
@@ -13,10 +13,10 @@ const ShowStory = ({ setShow, fullData }) => {
         setShow(false);
     };
 
-    const handleClick = ()=>{
+    // const handleClick = () => {
 
-        console.log("check")
-    }
+    //     console.log("check")
+    // }
 
     // console.log(fullData);
 
@@ -44,11 +44,11 @@ const ShowStory = ({ setShow, fullData }) => {
     const stories = fullData?.map((item) => ({
         content: ({ action, isPaused }) => (
             <div onClick={action('close')} style={{ background: `url(${item.image}) no-repeat`, backgroundSize: 'cover', height: "100%", width: "100%", backdropfilter: "blur(0px)" }}>
-                <div style={{ height: "20px", width: "100%",  borderColor: "black",zIndex: "9", display: "flex", flexDirection: "row", position: "absolute", top: "45px", alignContent: "space-between" }}>
-                    <img src={Bkm} ></img>
+                {/* <div style={{ height: "20px", width: "100%", borderColor: "black", zIndex: "9", display: "flex", flexDirection: "row", position: "absolute", top: "45px", alignContent: "space-between" }}> */}
+                    {/* <img src={Bkm} ></img> */}
                     {/* <button className="close-button" onClick={() => action('close')}>&times;</button> */}
-                    <img src={cross} style={{ position: "absolute", left: "335px",cursor:"pointer" }} ></img>
-                </div>
+                    {/* <img src={cross} style={{ position: "absolute", left: "335px", cursor: "pointer" }} ></img> */}
+                {/* </div> */}
                 <div style={{ position: "relative", marginTop: "380px", width: "100%", left: "0", height: "45%", backgroundColor: "rgba(0, 0, 0, 0.6)", backdropfilter: "blur(5px)", background: "linear-gradient(0, #303030 59.6%, rgba(89, 87, 87, 0) 102.31%)" }}>
                     <h3 style={{ position: "relative", marginTop: "0px", marginLeft: "10%", color: "white" }}>{item.heading}</h3>
                     <p style={{ color: "white", position: "relative", marginTop: "20px", textAlign: "center" }}>{item.description}</p>

@@ -13,7 +13,7 @@ const ShowModal = ({ setOpen, fullData }) => {
             document.body.style.overflowX = "scroll";
             document.body.style.overflowY = "scroll";
         };
-    }, []);
+    }, []); 
 
     // console.log(fullData);
 

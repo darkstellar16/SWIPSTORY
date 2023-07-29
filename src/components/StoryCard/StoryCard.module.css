@@ -65,6 +65,15 @@
     /* overflow: hidden; */
 
 }
+.bkm{
+    z-index: 5;
+    position:absolute;
+    top:5px;
+    left:240px;
+    height: 25px;
+    width:25px;
+    
+}
 
 .card-app {
     display: flex;

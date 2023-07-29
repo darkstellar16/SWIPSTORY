@@ -36,10 +36,10 @@ function HomePage() {
   ];
   const [data, setData] = useState();
   const [text, setText] = useState();
-  const storyData = (data) => {
+  const receiveData = (data) => {
     setData(data);
   }
-  const storyText = (text) => {
+  const receiveText = (text) => {
     setText(text);
   }
 
@@ -48,7 +48,7 @@ function HomePage() {
       <NavBar />
       <div className={styles.mainCard}>
         {arr.map((item, indx) => {
-          return <FilterCard storyData={storyData} storyText={storyText} key={indx} text={item.text} img={item.href} />;
+          return <FilterCard receiveData={receiveData} receiveText={receiveText} key={indx} text={item.text} img={item.href} />;
         })}
       </div>
       {text && <div className={styles.story}>{` ${text} Stories`}</div>}

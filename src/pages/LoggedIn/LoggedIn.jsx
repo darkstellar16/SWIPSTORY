@@ -47,7 +47,7 @@ function LoggedIn() {
   const receiveText = (text) => {
     setText(text);
   }
-  // console.log(data);
+  console.log(data);
   const userId = JSON.parse(localStorage.getItem("userId"));
   // console.log(userId);
   const storyData = async () => {
@@ -63,7 +63,6 @@ function LoggedIn() {
   useEffect(() => {
     storyData();
   }, [])
-
   return (
     <>
       <div className={styles.mainContent}>
