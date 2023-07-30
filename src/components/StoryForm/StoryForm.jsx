@@ -42,11 +42,12 @@ const StoryForm = ({ setIsOpenS }) => {
             setSlide((prev) => [...prev, 1]);
     }
 
-    const token = JSON.parse(localStorage.getItem('Token'));
+
     // console.log(token);
     const userId = JSON.parse(localStorage.getItem("userId"))
-    console.log(userId);
+    // console.log(userId);
 
+    const token = JSON.parse(localStorage.getItem('Token'));
 
     const config = {
         headers: { Authorization: `Bearer ${token}` }
@@ -100,11 +101,12 @@ const StoryForm = ({ setIsOpenS }) => {
                         value={head}
                         onChange={(e) => setHead(e.target.value)}
                     />
-                    <input
+                    <textarea
                         className={styles.description}
                         type="text"
                         placeholder=' Story Description'
                         value={desc}
+                        maxLength="210"
                         onChange={(e) => setDesc(e.target.value)}
                     />
                     <input

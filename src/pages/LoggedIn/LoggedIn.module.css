@@ -18,14 +18,14 @@
 .story {
   position: relative;
   top: 10px;
-  left: 700px;
+  margin-left: 700px;
   font-weight: 700;
   font-size:large;
 }
 
 .yourStory {
   position: relative;
-  left: 700px;
+  margin-left: 700px;
   top: 0px;
   font-weight:700;
   font-size: large;
@@ -34,9 +34,10 @@
 .cardContent {
   position: relative;
   top: 22px;
-  left:20px;
+  margin-left:20px;
   width: 10;
   display: flex;
+  height: 500px;
   flex-wrap: wrap;
 
 }
@@ -47,5 +48,6 @@
   margin-left: 20px;
   width: 10;
   display: flex;
+  height: 500px;
   flex-wrap: wrap;
 }

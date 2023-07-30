@@ -20,7 +20,7 @@
 .cardContent {
   position: relative;
   top: 22px;
-  left: 20px;
+  margin-left: 15px;
   width: 10;
   display: flex;
   flex-wrap: wrap;
@@ -29,8 +29,9 @@
 
 .story {
   position: relative;
-  top: 10px;
-  left: 700px;
+  width:200px;
+  top: 0px;
+  left: 670px;
   font-weight: 700;
   font-size: large;
 }

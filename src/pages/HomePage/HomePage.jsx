@@ -47,13 +47,13 @@ function HomePage() {
     <div className={styles.mainContent}>
       <NavBar />
       <div className={styles.mainCard}>
-        {arr.map((item, indx) => {
+        {arr?.map((item, indx) => {
           return <FilterCard receiveData={receiveData} receiveText={receiveText} key={indx} text={item.text} img={item.href} />;
         })}
       </div>
       {text && <div className={styles.story}>{` ${text} Stories`}</div>}
       <div className={styles.cardContent}>{data?.map((item) => {
-        return <StoryCard data={item?.posts[0]} fullData={item.posts} />
+        return <StoryCard data={item?.posts[0]} fullData={item} />
       })} </div>
 
     </div>

@@ -13,7 +13,7 @@ function LoggedIn() {
   const [data, setData] = useState();
   const [text, setText] = useState();
   const [myStory, setMyStory] = useState();
-  const [id, setId] = useState();
+  const [rerender, setRerender] = useState(true);
   let arr = [
     {
       text: "All",
@@ -41,28 +41,35 @@ function LoggedIn() {
     },
   ];
 
+  const reRender = () => {
+    setRerender((prev) => !prev)
+
+  }
   const receiveData = (data) => {
     setData(data);
   }
   const receiveText = (text) => {
     setText(text);
   }
-  console.log(data);
+  // console.log(data);
   const userId = JSON.parse(localStorage.getItem("userId"));
+
   // console.log(userId);
   const storyData = async () => {
     try {
       const res = await axios.get(`http://localhost:8000/mystory/?userId=${userId}`)
-      // console.log(res.data);
       setMyStory(res.data);
-      setId(res.data[0].userId)
+
     } catch (error) {
       console.log(error);
     }
   }
+
   useEffect(() => {
     storyData();
-  }, [])
+  }, [rerender])
+
+  // console.log(myStory);
   return (
     <>
       <div className={styles.mainContent}>
@@ -72,13 +79,17 @@ function LoggedIn() {
             <FilterCard receiveData={receiveData} receiveText={receiveText} text={item.text} img={item.href} />
           )}
         </div>
-        <div className={styles.yourStory}>YOUR STORIES</div>
-        <div className={styles.mycardContent} >{myStory?.map((item) => {
-          return <StoryCard data={item?.posts[0]} id={id} fullData={item?.posts} />
-        })}</div>
+        {myStory?.length !== 0 ? (<><div className={styles.yourStory}>YOUR STORIES</div>
+        <div className={styles.mycardContent} >
+          {myStory?.map((item) => {
+          return <StoryCard data={item?.posts[0]} fullData={item} reRender={reRender} />
+        })}
+        </div>
+        </>
+        ) : null}
         {text && <div className={styles.story}>{`${text} Stories`}</div>}
         <div className={styles.cardContent} >{data?.map((item) => {
-          return <StoryCard data={item?.posts[0]} fullData={item?.posts} />
+          return <StoryCard data={item?.posts[0]} fullData={item} reRender={reRender} />
         })}</div>
       </div>
     </>

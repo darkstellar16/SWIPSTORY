@@ -6,11 +6,6 @@ import { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
 
-
-
-
-
-
 const BookMark = () => {
     let posts = [
         {
@@ -61,9 +56,15 @@ const BookMark = () => {
     const uid = JSON.parse(localStorage.getItem("userId"));
     // console.log(uid);
 
+    const token = JSON.parse(localStorage.getItem('Token'));
+
+    const config = {
+        headers: { Authorization: `Bearer ${token}` }
+    };
+
     useEffect(() => {
         const getData = async () => {
-            const res = await axios.get(`http://localhost:8000/bookmark/?uid=${uid}`)
+            const res = await axios.get(`http://localhost:8000/bookmark/?uid=${uid}`, config)
             setBookmark(res.data.bookmark);
             // console.log(res.data.bookmark);
         }
@@ -79,9 +80,9 @@ const BookMark = () => {
                 <LogNav />
                 <div className={styles.head}>Your Bookmarks</div>
             </div>
-            <div style={{display:'flex'}}>
-                {bookmark.map((item) => {
-                    return <StoryCard data={item.posts[0]} fullData={item.posts} />
+            <div style={{ display: 'flex' }}>
+                {bookmark?.map((item) => {
+                    return <StoryCard data={item?.posts[0]} fullData={item} />
                 })}
             </div>
         </>

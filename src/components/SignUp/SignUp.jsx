@@ -3,6 +3,7 @@ import styles from "../SignUp/SignUp.module.css";
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from "../../App";
 import axios from "axios";
+import { toast } from 'react-toastify';
 
 const SignUp = ({ setIsOpenS }) => {
   const closeS = () => {
@@ -33,17 +34,20 @@ const SignUp = ({ setIsOpenS }) => {
   }
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     const check = await loginUser();
-    // console.log(check)
-
     if (check) {
       setLogin(true);
+      toast.success('Sucessfully Sign-In', {
+        position: "top-right",
+        autoClose: 5000,
+      });
       navigate('/log');
-      // console.log(username, password);
     }
     else {
-      alert("Incorrect credential")
+      toast.error('Please enter Correct Details', {
+        position: "top-right",
+        autoClose: 5000,
+      });
       navigate('/')
     }
   };

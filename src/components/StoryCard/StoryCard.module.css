@@ -1,7 +1,7 @@
-.headCard{
+.headCard {
     width: 287px;
-    height: 470px;
-    overflow: hidden;
+    height: 480px;
+    /* overflow: hidden; */
     position: relative;
 }
 
@@ -32,7 +32,7 @@
     background-color: rgba(0, 0, 0, 0.6);
     padding-top: 40px;
 
-    backdrop-filter: blur(0px); 
+    backdrop-filter: blur(0px);
     /* box-shadow: 0px 4px 10px 10px #d8d1d140; */
     background: linear-gradient(0, #303030 59.6%, rgba(89, 87, 87, 0) 102.31%);
 
@@ -41,9 +41,9 @@
 .cardTitle {
     /* align-items: center; */
     /* width: fit-content; */
-    left: 63px;    
+    left: 63px;
     color: #fff;
-   
+
     /* margin-top: 5px;
     margin-left: 0px; */
     font-size: 18px;
@@ -65,14 +65,15 @@
     /* overflow: hidden; */
 
 }
-.bkm{
-    z-index: 5;
-    position:absolute;
-    top:5px;
-    left:240px;
+
+.bkm {
+    z-index:1;
+    position: relative;
+    top: 42px;
+    left:250px;
     height: 25px;
-    width:25px;
-    
+    width: 25px;
+
 }
 
 .card-app {
@@ -80,16 +81,13 @@
     justify-content: center;
 }
 
-.edit {
-   position: relative;
-   left: 42%;
-   bottom: 4%;
-   /* z-index: -1; */
-    border:solid;
-    border-radius: 12px;
-    background-color: white;
-    border-color: white;
-    font-weight:700;
-    font-size: 12px;
+
+.del{
+    height: 20px;
+    width:20px;
+    position: relative;
+    left: 48%;
+    bottom: 3%;
+    z-index: 8;
     box-shadow: 0px 4px 15px 0px #0000001A;
 }
