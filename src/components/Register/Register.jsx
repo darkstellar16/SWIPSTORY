@@ -24,7 +24,7 @@ const Register = ({ setIsOpenR }) => {
     try {
       console.log(username, password);
 
-      const data = await axios.post('http://localhost:8000/register', {
+      const data = await axios.post('https://swipstorybackend.onrender.com/register', {
         email: username,
         password: password
       })

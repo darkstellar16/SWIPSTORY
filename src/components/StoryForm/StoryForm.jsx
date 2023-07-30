@@ -12,7 +12,7 @@ const StoryForm = ({ setIsOpenS }) => {
     const [cat, setCatg] = useState('');
 
     const [posts, setPosts] = useState([]);
-    // const [currentForm, setCurrentForm] = useState(0);
+    
     const [slide, setSlide] = useState([1, 1, 1]);
 
     const addFormData = () => {
@@ -27,7 +27,7 @@ const StoryForm = ({ setIsOpenS }) => {
     }
     const openNextForm = () => {
         clearFormData();
-        // setCurrentForm((currentForm) => currentForm + 1);
+       
     }
     const clearFormData = () => {
         setHead('')
@@ -35,17 +35,15 @@ const StoryForm = ({ setIsOpenS }) => {
         setImg('');
         setCatg('')
     };
-    // console.log(posts);
+
 
     const handleSlide = () => {
         if (slide.length < 6)
             setSlide((prev) => [...prev, 1]);
     }
 
-
-    // console.log(token);
     const userId = JSON.parse(localStorage.getItem("userId"))
-    // console.log(userId);
+    
 
     const token = JSON.parse(localStorage.getItem('Token'));
 
@@ -56,18 +54,17 @@ const StoryForm = ({ setIsOpenS }) => {
     const storyData = async () => {
         let res = { posts, userId };
         try {
-            const info = await axios.post('http://localhost:8000/story', res, config)
+            const info = await axios.post('https://swipstorybackend.onrender.com/story', res, config)
             return true
         } catch (error) {
             console.log(error)
             return false
         }
     }
-    // console.log(storyData);
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         const check = await storyData();
-        // console.log(check.data);
         if (check) {
             setPosts([]);
             setIsOpenS(false);

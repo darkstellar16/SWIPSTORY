@@ -21,7 +21,7 @@ const StoryCard = ({ data, fullData, reRender }) => {
             uid: userId,
             pid: id
         }
-        const res = await axios.post("http://localhost:8000/bookmark/add", data);
+        const res = await axios.post("https://swipstorybackend.onrender.com/bookmark/add", data);
         if (res) {
             toast.success('Sucessfully BookMarked', {
                 position: "top-right",
@@ -32,7 +32,7 @@ const StoryCard = ({ data, fullData, reRender }) => {
     }
 
     const handleDelete = async (id) => {
-        const res = await axios.delete(`http://localhost:8000/remove?id=${id}`)
+        const res = await axios.delete(`https://swipstorybackend.onrender.com/remove?id=${id}`)
         if (res) {
             toast.success('Sucessfully deleted', {
                 position: "top-right",

@@ -9,7 +9,7 @@ function FilterCard(props) {
   const token = JSON.parse(localStorage.getItem("Token"));
 
   const handleClick = async (text) => {
-    const res = await axios.get(`http://localhost:8000/filter/?catg=${text}`);
+    const res = await axios.get(`https://swipstorybackend.onrender.com/filter/?catg=${text}`);
     props.receiveText(text);
     props.receiveData(res.data);
   }

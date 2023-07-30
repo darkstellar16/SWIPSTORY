@@ -43,7 +43,6 @@ function LoggedIn() {
 
   const reRender = () => {
     setRerender((prev) => !prev)
-
   }
   const receiveData = (data) => {
     setData(data);
@@ -51,13 +50,10 @@ function LoggedIn() {
   const receiveText = (text) => {
     setText(text);
   }
-  // console.log(data);
   const userId = JSON.parse(localStorage.getItem("userId"));
-
-  // console.log(userId);
   const storyData = async () => {
     try {
-      const res = await axios.get(`http://localhost:8000/mystory/?userId=${userId}`)
+      const res = await axios.get(`https://swipstorybackend.onrender.com/mystory/?userId=${userId}`)
       setMyStory(res.data);
 
     } catch (error) {
@@ -68,8 +64,6 @@ function LoggedIn() {
   useEffect(() => {
     storyData();
   }, [rerender])
-
-  // console.log(myStory);
   return (
     <>
       <div className={styles.mainContent}>
@@ -97,5 +91,3 @@ function LoggedIn() {
 }
 
 export default LoggedIn;
-
-// {`${text} Stories`}

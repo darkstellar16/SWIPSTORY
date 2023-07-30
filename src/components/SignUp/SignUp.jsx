@@ -17,13 +17,11 @@ const SignUp = ({ setIsOpenS }) => {
 
   const loginUser = async () => {
     try {
-      // console.log(username, password);
-      const info = await axios.post("http://localhost:8000/login", {
+      const info = await axios.post("https://swipstorybackend.onrender.com/login", {
         email: username,
         password: password,
       })
-      // console.log(info.data.user._id);
-      // console.log(info.data.user.token);
+      
       localStorage.setItem("userId", JSON.stringify(info.data.user._id))
       localStorage.setItem("Token", JSON.stringify(info.data.user.token));
       return true;
@@ -60,7 +58,7 @@ const SignUp = ({ setIsOpenS }) => {
       document.body.style.overflowY = "scroll";
     };
   }, []);
-  // console.log(login);
+  
   return (
     <>
       <div className={styles.mainModal}></div>
