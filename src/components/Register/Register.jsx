@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import styles from "../Register/Register.module.css";
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const Register = ({ setIsOpenR }) => {
   const closeR = () => {
@@ -28,10 +29,9 @@ const Register = ({ setIsOpenR }) => {
         email: username,
         password: password
       })
-      return true
+      console.log(data)
     } catch (error) {
       console.log(error);
-      return false;
     }
   }
   const handleSubmit = async (e) => {
@@ -41,13 +41,17 @@ const Register = ({ setIsOpenR }) => {
     if (check) {
       registerUser();
       setIsOpenR(false);
+      toast.success('Sucessfully Registered', {
+        position: "top-right",
+        autoClose: 5000,
+      });
     }
     else {
-      alert("Invalid Credentials");
+      toast.error('Please Sign-In You are Already registered', {
+        position: "top-right",
+        autoClose: 5000,
+      });
     }
-
-
-    // setIsOpenR(false);
   };
 
   return (

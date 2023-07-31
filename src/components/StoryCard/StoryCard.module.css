@@ -1,13 +1,13 @@
 .headCard {
     width: 287px;
-    height: 480px;
+    height: 495px;
     /* overflow: hidden; */
     position: relative;
 }
 
 .card {
     width: 257px;
-    height: 459px;
+    height: 489px;
     position: relative;
     margin-left: 25px;
     overflow: hidden;
@@ -43,9 +43,9 @@
     /* width: fit-content; */
     left: 63px;
     color: #fff;
-
-    /* margin-top: 5px;
-    margin-left: 0px; */
+    position: relative;
+    margin-top: 5px;
+    left: 12px;
     font-size: 18px;
     font-weight: bold;
     /* text-align: center; */
@@ -57,7 +57,7 @@
     /* margin-right: 70px; */
     color: #fff;
     font-size: 14px;
-    margin-top: 46px;
+    margin-top: 25px;
     text-align: center;
     align-items: center;
     margin-left: 5px;

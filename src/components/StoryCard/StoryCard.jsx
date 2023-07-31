@@ -53,7 +53,7 @@ const StoryCard = ({ data, fullData, reRender }) => {
             <div className={styles.card}>
                 <img className={styles.cardPhoto} src={data.image} alt="Card" onClick={openModal} />
                 <div className={styles.cardOverlay}>
-                    <h3 className={styles.cardTitle}>{data.heading}</h3>
+                    <div className={styles.cardTitle}>{data.heading}</div>
                     <p className={styles.cardDescription}>{data.description}</p>
                 </div>
             </div>
